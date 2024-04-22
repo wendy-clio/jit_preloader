@@ -3,7 +3,7 @@ module JitPreloader
 
     attr_accessor :records
 
-    if Gem::Version.new(ActiveRecord::VERSION::STRING) >= Gem::Version.new("7.0.0")
+    if Gem::Version.new(ActiveRecord::VERSION::STRING) >= Gem::Version.new("6.0.0")
       def self.attach(records)
         new(records: records.dup, associations: nil).tap do |loader|
           records.each do |record|
